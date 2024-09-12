@@ -1,0 +1,47 @@
+:root {
+    --body-text-color: #f0f4f8;
+    --body-bg-color: #0f1b2a; /* Azul escuro */
+    --header-bg-color: #1c2b3b; /* Azul mais escuro */
+    --header-text-color: #e0e0e0;
+    --input-border-color: #00bcd4;
+    --input-bg-color: #1c2b3b;
+    --input-text-color: #fff;
+    --icon-color: #ffffff;
+    --icon-hover-color: #1897ff; /* Rosa choque */
+    --main-nav-bg-color: #1b2a3b; /* Azul intermediário */
+    --nav-link-color: #e0e0e0;
+    --nav-link-hover-color: #1897ff;
+    --border-color: #444;
+    --featured-product-bg-color: #1c2b3b;
+    --featured-product-title-color: #00bcd4;
+    --product-description-color: #e0e0e0;
+    --footer-bg-color: #1b2a3b;
+    --footer-text-color: #e0e0e0;
+    --footer-title-color: #00bcd4;
+    --footer-link-color: #e0e0e0;
+    --footer-link-hover-color: #1897ff;
+}
+
+.light-theme {
+    --body-text-color: #333;
+    --body-bg-color: #f0f0f0;
+    --header-bg-color: #ffffff;
+    --header-text-color: #333;
+    --input-border-color: #00aaff;
+    --input-bg-color: #ffffff;
+    --input-text-color: #333;
+    --icon-color: #00aaff;
+    --icon-hover-color: #ff4081;
+    --main-nav-bg-color: #ffffff;
+    --nav-link-color: #333;
+    --nav-link-hover-color: #00aaff;
+    --border-color: #ccc;
+    --featured-product-bg-color: #ffffff;
+    --featured-product-title-color: #00aaff;
+    --product-description-color: #333;
+    --footer-bg-color: #ffffff;
+    --footer-text-color: #333;
+    --footer-title-color: #00aaff;
+    --footer-link-color: #333;
+    --footer-link-hover-color: #00aaff;
+}
