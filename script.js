@@ -7,6 +7,30 @@ document.getElementById('theme-toggle').addEventListener('change', function (eve
     }
 });
 
+//Modal para gerenciar account
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('account-modal');
+    const openButton = document.getElementById('account-link');
+    const closeButton = document.querySelector('.close-button');
+    
+    openButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.style.display = 'block';
+    });
+    
+    closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+
+
 
 //Table para alteração das imagens em destaque
 const imagesColumn1 = [
@@ -26,6 +50,7 @@ const imagesColumn2 = [
     '/assets/produtos/destaque/cavebot_extras.png'
 ];
 
+//Função para alterar as imagens pelo index
 let currentIndex1 = 0;
 let currentIndex2 = 0;
 
@@ -56,8 +81,6 @@ function prevImage(column) {
         showImage(2, currentIndex2);
     }
 }
-
-
 
 window.addEventListener("scroll", function() {
     const header = document.getElementById("header");

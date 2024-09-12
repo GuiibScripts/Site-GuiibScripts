@@ -27,7 +27,7 @@
                     <img id="discord-icon" src="./assets/icon/logo-discord.svg" alt="Discord Icon">
                     <span>Discord</span>
                 </a>
-                <a href="#">
+                <a href="#" id="account-link">
                     <img id="account-icon" src="./assets/icon/person-outline.svg" alt="Account Icon">
                     <span>Account</span>
                 </a>
@@ -77,6 +77,30 @@
             
         </section>
     </main>
+
+
+    <div id="account-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-header">
+                <img src="./assets/Logo_GuiiB.png" alt="Logo" class="modal-logo">
+                <h2>Iniciar Sessão</h2>
+            </div>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Conectar</button>
+            </form>
+            <div class="modal-footer">
+                <a href="#">Recuperar Senha</a>
+                <a href="#">Cadastrar</a>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
