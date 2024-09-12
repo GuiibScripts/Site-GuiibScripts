@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guiib Scripts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- Parte Superior -->
-    <header>
+    <header id="header">
         <div class="top-bar">
             <div class="logo"><img src="./assets/Logo_GuiiB.png" alt=""></div>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
-            </div>
-            <div class="icons">
-                <a href="#">Discord</a>
-                <a href="#">Account</a>
-                <a href="#">Carrinho</a>
-            </div>
-            <!-- Checkbox para alternar tema -->
             <div class="theme-switch">
                 <label for="theme-toggle">Tema Claro</label>
                 <input type="checkbox" id="theme-toggle">
             </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar..." >
+            </div>
+            <div class="icons">
+                <a href="#">
+                    <img id="discord-icon" src="./assets/icon/logo-discord.svg" alt="Discord Icon">
+                    <span>Discord</span>
+                </a>
+                <a href="#">
+                    <img id="account-icon" src="./assets/icon/person-outline.svg" alt="Account Icon">
+                    <span>Account</span>
+                </a>
+                <a href="#">
+                    <img id="cart-icon" src="./assets/icon/cart-outline.svg" alt="Cart Icon">
+                    <span>Carrinho (0)</span>
+                </a>
+            </div>
+            
+            
+            <!-- Checkbox para alternar tema -->
+
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="#">Início</a></li>
+                <li><a href="./index.html">Início</a></li>
                 <li><a href="#">Combo Creator</a></li>
                 <li><a href="#">Anti GM</a></li>
                 <li><a href="#">Catálogo Hunts</a></li>
-                <li><a href="#">Scripts Gerais</a></li>
+                <li><a href="#">Config Vocações</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Produto em Destaque -->
-    <main>
-
+    <main class="content">
         
         <section class="featured-product">
             <img src="./assets/produtos/destaque/Destaque.png" alt="">
-            <!-- HTML -->
             <div class="product-gallery">
-                <!-- Coluna 1 -->
+
                 <div class="product-gallery1">
                     <button class="prev-btn" onclick="prevImage(1)">&#10094;</button>
                     <img id="gallery1-img" src="./assets/produtos/destaque/travel.png" alt="Produto Imagem 1">
                     <button class="next-btn" onclick="nextImage(1)">&#10095;</button>
                 </div>
             
-                <!-- Coluna 2 -->
                 <div class="product-gallery2">
                     <button class="prev-btn" onclick="prevImage(2)">&#10094;</button>
                     <img id="gallery2-img" src="/assets/produtos/destaque/cavebot_supplies.png" alt="Produto Imagem 3">
@@ -65,7 +77,8 @@
             
         </section>
     </main>
-        <footer>
+
+    <footer>
         <div class="footer-content">
             <div class="footer-info">
                 <h3>Sobre Nós</h3>
@@ -86,9 +99,10 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 GuiiBScripts <br> Todos os direitos reservados.</p>
+            <p>&copy; 2024 GuiiBScripts. Todos os direitos reservados.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

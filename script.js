@@ -1,40 +1,14 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.product-images img');
-    let currentIndex = 0;
-
-    function showImage(index) {
-        images.forEach((img, i) => {
-            img.classList.remove('active');
-            img.style.opacity = '0';
-            img.style.top = '100%'; // Preparar a imagem para a animação de "queda"
-        });
-        images[index].classList.add('active');
-        images[index].style.opacity = '1';
-        images[index].style.top = '0'; // Inicia a animação de "queda"
-    }
-
-    function nextImage() {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        showImage(currentIndex);
-    }
-
-    showImage(currentIndex); // Mostrar a primeira imagem inicialmente
-
-    setInterval(nextImage, 5000); // Trocar imagem a cada 4 segundos
-});
-
+//Alteração de cores para Tema Claro e Escuro
 document.getElementById('theme-toggle').addEventListener('change', function (event) {
     if (event.target.checked) {
-        // Ativar tema claro
         document.documentElement.classList.add('light-theme');
     } else {
-        // Voltar para tema escuro
         document.documentElement.classList.remove('light-theme');
     }
 });
 
 
+//Table para alteração das imagens em destaque
 const imagesColumn1 = [
     './assets/produtos/destaque/travel.png',
     '/assets/produtos/destaque/Portas e Click.png',
@@ -83,3 +57,16 @@ function prevImage(column) {
     }
 }
 
+
+
+window.addEventListener("scroll", function() {
+    const header = document.getElementById("header");
+    const mainNav = document.querySelector(".main-nav");
+    const headerHeight = header.offsetHeight;
+
+    if (window.scrollY > headerHeight) {
+        mainNav.classList.add("fixed");
+    } else {
+        mainNav.classList.remove("fixed");
+    }
+});
