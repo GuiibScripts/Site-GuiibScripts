@@ -84,8 +84,10 @@
             <span class="close-button">&times;</span>
             <div class="modal-header">
                 <img src="./assets/Logo_GuiiB.png" alt="Logo" class="modal-logo">
-                <h2>Iniciar Sessão</h2>
+                <h2 id="modal-title">Iniciar Sessão</h2>
             </div>
+    
+            <!-- Formulário de Login -->
             <form id="login-form">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -95,12 +97,40 @@
                 
                 <button type="submit">Conectar</button>
             </form>
+    
+            <!-- Formulário de Cadastro (inicialmente oculto) -->
+            <form id="register-form" style="display: none;">
+                <label for="new-name">Nome:</label>
+                <input type="text" id="new-name" name="new-name" required>
+
+
+                <label for="new-email">Email:</label>
+                <input type="email" id="new-email" name="new-email" required>
+    
+                <label for="new-password">Senha:</label>
+                <input type="password" id="new-password" name="new-password" required>
+    
+                <label for="confirm-password">Confirmar Senha:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+    
+                <button type="submit">Cadastrar</button>
+            </form>
+    
+            <form id="forgot-password-form" style="display: none;">
+                <label for="recovery-email">Email:</label>
+                <input type="email" id="recovery-email" name="recovery-email" required>
+                
+                <button type="submit">Recuperar Senha</button>
+            </form>
+    
             <div class="modal-footer">
-                <a href="#">Recuperar Senha</a>
-                <a href="#">Cadastrar</a>
+                <a href="#" id="forgot-password-link">Recuperar Senha</a>
+                <a href="#" id="toggle-form-link">Cadastrar</a>
             </div>
         </div>
     </div>
+    
+    
 
     <footer>
         <div class="footer-content">

@@ -29,6 +29,74 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Seleciona os elementos
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+const forgotPasswordForm = document.getElementById('forgot-password-form');
+const toggleFormLink = document.getElementById('toggle-form-link');
+const forgotPasswordLink = document.getElementById('forgot-password-link');
+const modalTitle = document.getElementById('modal-title');
+
+// Alterna entre Login e Cadastro
+toggleFormLink.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (registerForm.style.display === 'none' && forgotPasswordForm.style.display === 'none') {
+        // Mostrar formulário de cadastro
+        registerForm.style.display = 'flex';
+        loginForm.style.display = 'none';
+        forgotPasswordForm.style.display = 'none';
+        modalTitle.textContent = 'Cadastrar';
+        toggleFormLink.textContent = 'Já tem uma conta? Iniciar Sessão';
+    } else {
+        // Mostrar formulário de login
+        registerForm.style.display = 'none';
+        loginForm.style.display = 'flex';
+        forgotPasswordForm.style.display = 'none';
+        modalTitle.textContent = 'Iniciar Sessão';
+        toggleFormLink.textContent = 'Cadastrar';
+    }
+});
+
+// Alterna para o formulário de Recuperar Senha
+forgotPasswordLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'none';
+    forgotPasswordForm.style.display = 'flex';
+    modalTitle.textContent = 'Recuperar Senha';
+    toggleFormLink.textContent = 'Voltar'; // Reutiliza o link como "Voltar"
+    
+});
+
+// Quando "Voltar" for clicado, retorna ao formulário de login
+toggleFormLink.addEventListener('click', function (e) {
+    if (forgotPasswordForm.style.display === 'block') {
+        e.preventDefault();
+        forgotPasswordForm.style.display = 'none';
+        loginForm.style.display = 'none';
+        modalTitle.textContent = 'Iniciar Sessão';
+        toggleFormLink.textContent = 'Cadastrar'; // Volta ao comportamento original
+    }
+});
+
+
+
+// Verifica se as senhas de cadastro coincidem
+registerForm.addEventListener('submit', function (e) {
+    const password = document.getElementById('new-password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password !== confirmPassword || password.length < 6) {
+        e.preventDefault(); 
+    
+        if (password !== confirmPassword) {
+            alert('As senhas não coincidem. Por favor, tente novamente.');
+        } else if (password.length < 6) {
+            alert('A senha deve ter pelo menos 6 caracteres.');
+        }
+    }
+});
 
 
 
@@ -82,6 +150,7 @@ function prevImage(column) {
     }
 }
 
+//Fixando Navegação no Topo da Tela
 window.addEventListener("scroll", function() {
     const header = document.getElementById("header");
     const mainNav = document.querySelector(".main-nav");
