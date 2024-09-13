@@ -1,3 +1,11 @@
+// Seleciona os elementos
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+const forgotPasswordForm = document.getElementById('forgot-password-form');
+const toggleFormLink = document.getElementById('toggle-form-link');
+const forgotPasswordLink = document.getElementById('forgot-password-link');
+const modalTitle = document.getElementById('modal-title');
+
 //Alteração de cores para Tema Claro e Escuro
 document.getElementById('theme-toggle').addEventListener('change', function (event) {
     if (event.target.checked) {
@@ -29,27 +37,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Seleciona os elementos
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
-const forgotPasswordForm = document.getElementById('forgot-password-form');
-const toggleFormLink = document.getElementById('toggle-form-link');
-const forgotPasswordLink = document.getElementById('forgot-password-link');
-const modalTitle = document.getElementById('modal-title');
+
 
 // Alterna entre Login e Cadastro
 toggleFormLink.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (registerForm.style.display === 'none' && forgotPasswordForm.style.display === 'none') {
-        // Mostrar formulário de cadastro
         registerForm.style.display = 'flex';
         loginForm.style.display = 'none';
         forgotPasswordForm.style.display = 'none';
         modalTitle.textContent = 'Cadastrar';
         toggleFormLink.textContent = 'Já tem uma conta? Iniciar Sessão';
     } else {
-        // Mostrar formulário de login
         registerForm.style.display = 'none';
         loginForm.style.display = 'flex';
         forgotPasswordForm.style.display = 'none';
@@ -65,7 +65,7 @@ forgotPasswordLink.addEventListener('click', function (e) {
     registerForm.style.display = 'none';
     forgotPasswordForm.style.display = 'flex';
     modalTitle.textContent = 'Recuperar Senha';
-    toggleFormLink.textContent = 'Voltar'; // Reutiliza o link como "Voltar"
+    toggleFormLink.textContent = 'Voltar'; 
     
 });
 
@@ -76,7 +76,7 @@ toggleFormLink.addEventListener('click', function (e) {
         forgotPasswordForm.style.display = 'none';
         loginForm.style.display = 'none';
         modalTitle.textContent = 'Iniciar Sessão';
-        toggleFormLink.textContent = 'Cadastrar'; // Volta ao comportamento original
+        toggleFormLink.textContent = 'Cadastrar'; 
     }
 });
 
